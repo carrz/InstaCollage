@@ -3,7 +3,7 @@
 $(document).ready(function(){
 })
 
-$('#name').change(function() {  
+$('#name').blur(function() {  
   if($('#name').val().length < 1) {  
       alert('Su nombre de usuario no puede estar vacío');  
   } else {
