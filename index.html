@@ -5,8 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>InstaCollage</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  
+  <!-- LogIn -->
+  <div id="login">
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Español(Chile)</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">English(USA)</a>
+            <a class="dropdown-item" href="#">Português(Brasil)</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="brand text-center">
+      <i class="fab fa-instagram"></i>
+      <h2>Photo Booth</h2>
+    </div>
+    <div class="session">
+      <div class="container">
+        <div class="row">
+          <div id="here" class="col">
+            <form action="">
+              <div class="input-group mb-3">
+                <input id="name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3">
+                <input id="password" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <button id="loginBtn" type="button" class="btn btn-lg btn-block disabled">Iniciar sesión</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="help text-center">
+      <p>¿Has olvidado tu información de inicio de sesión? <a href="#">Obtén ayuda</a></p>
+    </div>
+    <footer class="text-center">
+      <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+    </footer>
+  </div>
+  <!-- Principal page -->
+  <div id="main" class="d-none">
+    <!-- Collage zone -->
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col-lg-3 d-none d-lg-block no-padding">
+                  <div id="dropHere" class="bigPhoto" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+              </div>
+              <div class="col-lg-3 col-6 no-padding">
+                <div id="dropHere2" class="bigPhoto" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+            </div>
+              <div class="col-lg-6 col-6 no-padding">
+                <div id="dropHere3" class="littlePhotoTop" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+                <div id="dropHere4" class="littlePhotoBottom" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Photo's zone -->
+    <div class="container-fluid">
+      <div class="row justify-content-lg-center banner">
+        <div class="col-lg-3">
+          <i class="fab fa-instagram"></i>
+          <h2>Photo Booth</h2>
+        </div>
+      </div>
+      <section>
+        <div class="row">
+          <div class="col-lg-2 d-none d-lg-block squarePhoto no-padding" id="DropHereToo" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe" src="assets/img/roma.jpg" ondragstart="drag(event)" class="photo" alt=""></div>
+          <div class="col-lg-2 d-none d-lg-block squarePhoto no-padding" id="DropHereToo2" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe2" src="assets/img/praga.jpg" ondragstart="drag(event)" class="photo" alt=""></div>
+          <div class="col-lg-2 col-3 squarePhoto no-padding" id="DropHereToo3" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe3" src="assets/img/india.png" ondragstart="drag(event)" class="photo" alt=""></div>
+          <div class="col-lg-2 col-3 squarePhoto no-padding" id="DropHereToo4" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe4" src="assets/img/grecia.jpg" ondragstart="drag(event)" class="photo" alt=""></div>
+          <div class="col-lg-2 col-3 squarePhoto no-padding" id="DropHereToo5" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe5" src="assets/img/china.jpg" ondragstart="drag(event)" class="photo" alt=""></div>
+          <div class="col-lg-2 col-3 squarePhotoLast no-padding" id="DropHereToo6" ondragover="allowDrop(event)" ondrop="drop(event)"><img id="dragMe6" src="assets/img/berlin.jpg" ondragstart="drag(event)" class="photo" alt=""></div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
